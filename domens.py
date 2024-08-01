@@ -51,7 +51,7 @@ def print_data(ds):
 
 # Настройки по умолчанию для DAG
 default_args = {
-    'owner': 'mi_sozonov',  # Владелец DAG
+    'owner': 'FGJ',  # Владелец DAG
     'depends_on_past': False,  # Зависимость от предыдущих запусков
     'retries': 2,  # Количество попыток в случае ошибки
     'retry_delay': timedelta(minutes=5),  # Задержка между попытками
@@ -59,8 +59,8 @@ default_args = {
 }
 
 # Создание DAG
-dag = DAG('domains_mi_sozonov', default_args=default_args,
-          schedule_interval='30 9 * * *', tags=['mi_sozonov'])
+dag = DAG('FGJ', default_args=default_args,
+          schedule_interval='30 9 * * *', tags=['FGJ'])
 
 # Операторы задач
 t1_get_data = PythonOperator(task_id='get_data',
